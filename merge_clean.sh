@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET_BRANCH="master"
+TARGET_BRANCH="main"
 SOURCE_BRANCH=`git branch | grep \* | cut -d ' ' -f2`
 
 git checkout $TARGET_BRANCH

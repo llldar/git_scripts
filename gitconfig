@@ -1,0 +1,45 @@
+[core]
+    mergeoptions = --no-edit
+	compression = 3
+[user]
+	email = linlilulll@gmail.com
+	name = Nathaniel Lin
+[pull]
+	rebase = false
+[alias]
+	ignore = update-index --skip-worktree
+	unignore = update-index --no-skip-worktree
+	ignored = !git ls-files -v | grep "^S"
+	lc = !echo $(git log --pretty=format:'%h' -n 1)
+	pc = !sh ~/custom_scripts/git/push_clean.sh
+	pd = !sh ~/custom_scripts/git/push_dirty.sh
+	pt = !sh ~/custom_scripts/git/push_target.sh
+	md = !sh ~/custom_scripts/git/merge_dirty.sh
+	mc = !sh ~/custom_scripts/git/merge_clean.sh
+	mt = !sh ~/custom_scripts/git/merge_target.sh
+	rd = !sh ~/custom_scripts/git/rebase_dirty.sh
+	rc = !sh ~/custom_scripts/git/rebase_clean.sh
+	rt = !sh ~/custom_scripts/git/rebase_target.sh
+	cmb = !sh -c 'zx ~/custom_scripts/git/change_main_branch.mjs $1' -
+	sta = !sh -c '~/custom_scripts/git/stash_all.sh $1' -
+	usta = !sh ~/custom_scripts/git/unstash_all.sh
+	cred = config credential.helper 'cache --timeout 3600000'
+	r1 = reset HEAD~1
+	hr1 = reset --hard HEAD~1
+	sl = stash list
+	sp = !sh -c 'git stash pop $1' -
+	flip = !sh ~/custom_scripts/git/flip.sh
+	cp = cherry-pick
+	co = checkout
+	cn = checkout -b
+	sus = !sh -c 'git branch --set-upstream-to=origin/$1 $1' -
+[credential]
+	helper = cache --timeout 3600000
+[http]
+	postBuffer = 157286400
+	lowSpeedLimit = 0
+	lowSpeedTime = 999999
+	sslVerify = false
+	proxy = http://localhost:1087
+[init]
+	defaultBranch = main

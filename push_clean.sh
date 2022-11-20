@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET_BRANCH="master"
+TARGET_BRANCH="main"
 LATEST_COMMIT=`echo $(git log --pretty=format:'%h' -n 1)`
 SOURCE_BRANCH=`git branch | grep \* | cut -d ' ' -f2`
 
